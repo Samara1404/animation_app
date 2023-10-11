@@ -10,7 +10,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   bool isfillSan = false;
-  Duration duration = Duration(seconds: 3);
+  Duration duration = const Duration(seconds: 3);
   @override
   void initState() {
     super.initState();
@@ -32,15 +32,15 @@ class _HomeViewState extends State<HomeView> {
 
   Widget build(BuildContext context) {
     List<Color> lightBgColor = [
-      Color(0xff922a7f),
-      Color(0xffCE577D),
-      Color(0xffff9484),
-      if (isfillSan) Color(0xffff9080),
+      const Color(0xff922a7f),
+      const Color(0xffCE577D),
+      const Color(0xffff9484),
+      if (isfillSan) const Color(0xffff9080),
     ];
     var darkBgColor = [
-      Color(0xff0f1746),
-      Color(0xff263280),
-      Color(0xff33519A),
+      const Color(0xff0f1746),
+      const Color(0xff263280),
+      const Color(0xff33519A),
     ];
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
@@ -86,7 +86,7 @@ class _HomeViewState extends State<HomeView> {
             Container(
               width: width * 0.8,
               height: 50,
-              margin: EdgeInsets.fromLTRB(20, 100, 20, 0),
+              margin: const EdgeInsets.fromLTRB(20, 100, 20, 0),
               decoration: BoxDecoration(
                   color: Colors.white24,
                   borderRadius: BorderRadius.circular(10)),
@@ -96,8 +96,13 @@ class _HomeViewState extends State<HomeView> {
                     indicatorColor: Colors.transparent,
                     labelColor: Colors.black,
                     unselectedLabelColor: Colors.white,
-                    labelStyle: TextStyle(fontSize: 18),
-                    tabs: [
+                    labelStyle:
+                        const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    indicator: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    tabs: const [
                       Tab(text: 'Morning login'),
                       Tab(text: 'Night login'),
                     ],
